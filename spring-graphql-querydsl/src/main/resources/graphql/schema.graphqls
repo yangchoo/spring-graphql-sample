@@ -22,8 +22,11 @@ type Comment{
 
 
 type Query {
-    posts: [Post!]
-    post(id: ID!): Post
+    posts(title: String, content: String): [Post]!
+#    postsBy(content: String): [Post!]
+    post(id: ID, title: String, content: String): Post
+#    post(id: ID!): Post
+#    postBy(id: ID, content: String): Post
 }
 
 enum PostStatus {
